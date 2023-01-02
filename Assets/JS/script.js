@@ -5,7 +5,7 @@ var timeRemaining = 120;
 var highScores = document.getElementById("highScores");
 var quiz = document.getElementById("quiz");
 var choice = document.querySelectorAll(".choice");
-var question = document.getElementById("question");
+// var question = document.getElementById("question");
 var wrongAnswer = document.getElementById("wrong");
 var rightAnswer = document.getElementById("right");
 var nextQuestion = document.getElementById("next");
@@ -48,9 +48,9 @@ var questions = [
 
 var currentQuestion = 0;
 
-var random = Math.floor(Math.random() * questions.length);
-var questSelect = questions[random];
-
+// selects random question from questions object
+// var random = Math.floor(Math.random() * questions.length);
+// var questSelect = questions[random];
 
 
 startButton.addEventListener("click", startTimer);
@@ -78,10 +78,10 @@ function startTimer() {
 function displayQuestion() {
 
         quiz.style.display = "block";
-        quiz.textContent = questSelect.title;
+        quiz.textContent = questions[0].title;
 
         choice.forEach(function (element, index) {
-            element.textContent = questSelect.choices[index];
+            element.textContent = questions[0].choices[index];
             element.style.display = "block";
         });
     
@@ -92,10 +92,9 @@ function displayQuestion() {
 }
 
 
-
 function choiceHandler(event) {
     var btnEl = event.target;
-    if (btnEl.textContent !== questSelect.correctChoice) {
+    if (btnEl.textContent !== questions[0].correctChoice) {
         timeRemaining -= 10;
         timer.textContent = "Seconds Remaining: " + timeRemaining;
         wrongAnswer.style.display = "block";
@@ -129,14 +128,15 @@ nextQuestion.addEventListener("click", displayNextQuestion);
 function displayNextQuestion(){
 
     quiz.style.display = "block";
-    quiz.textContent = questSelect.title;
+    quiz.textContent = questions[1].title;
 
     choice.forEach(function (element, index) {
-        element.textContent = questSelect.choices[index];
+        element.textContent = questions[1].choices[index];
         element.style.display = "block";
     });
 
     wrongAnswer.style.display = "none";
     rightAnswer.style.display = "none";
     nextQuestion.style.display = "none";
+
 }
