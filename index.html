@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stye.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="float-left"><a href="#highScores">View High Scores</a></div>
+        <div class="float-right" id="timer"></div>
+    </header>
+
+    <div class="center">
+        <h1>Code Quiz Challenge</h1>
+    </div>
+    <div class="center">
+        <button id="start-button">Start The Quiz</button>
+    </div>
+
+    <div class="card" id="quiz"></div>
+    <div>
+    <button onclick="choiceHandler(event)" class="choice"></button>
+    <button onclick="choiceHandler(event)" class="choice"></button>
+    <button onclick="choiceHandler(event)" class="choice"></button>
+    <button onclick="choiceHandler(event)" class="choice"></button>
+    </div>
+
+    <div id="wrong">Wrong Answer!</div>
+    <div id="right">Right Answer!</div>
+
+    <div>
+        <button id="next">Next Question</button>
+    </div>
+
+    <div id="highScores">
+        <form></form>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

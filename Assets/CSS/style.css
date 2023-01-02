@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .header {
+        height: 65px;
+    }
+    
+    .float-left {
+        display: inline;
+        float: left;
+        padding: 25px;
+    }
+    
+    .float-right {
+        display: inline;
+        float: right;
+        padding: 25px;
+    }
+    
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 25px;
+    }
+
+    #start-button {
+       font-size: larger;
+       padding: 10px;
+       display: '';
+    }
+
+    .card {
+        text-align: center;
+        justify-content: center;
+    }
+
+    #quiz {
+        display: none;
+    }
+
+    .choice {
+        display: none;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 10px;
+        width: 200px;
+    }
+
+    #wrong {
+        display: none;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #right {
+        display: none;
+        text-align: center;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    #next {
+        margin: auto;
+        margin-top: 20px;
+        display: block;
+        padding: 10px;
+    }
