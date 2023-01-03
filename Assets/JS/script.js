@@ -5,7 +5,6 @@ var timeRemaining = 120;
 var highScores = document.getElementById("highScores");
 var quiz = document.getElementById("quiz");
 var choice = document.querySelectorAll(".choice");
-// var question = document.getElementById("question");
 var wrongAnswer = document.getElementById("wrong");
 var rightAnswer = document.getElementById("right");
 var nextQuestion = document.getElementById("next");
@@ -51,13 +50,12 @@ var currentQuestion = 0;
 // selects random question from questions object
 // var random = Math.floor(Math.random() * questions.length);
 // var questSelect = questions[random];
-
-
+var interval;
 startButton.addEventListener("click", startTimer);
 function startTimer() {
     startButton.style.display = "none";
 
-    var interval = setInterval(function () {
+    interval = setInterval(function () {
 
         timeRemaining--;
         timer.textContent = "Seconds Remaining: " + timeRemaining;
@@ -78,10 +76,10 @@ function startTimer() {
 function displayQuestion() {
 
         quiz.style.display = "block";
-        quiz.textContent = questions[0].title;
+        quiz.textContent = questions[currentQuestion].title;
 
         choice.forEach(function (element, index) {
-            element.textContent = questions[0].choices[index];
+            element.textContent = questions[currentQuestion].choices[index];
             element.style.display = "block";
         });
     
@@ -94,7 +92,7 @@ function displayQuestion() {
 
 function choiceHandler(event) {
     var btnEl = event.target;
-    if (btnEl.textContent !== questions[0].correctChoice) {
+    if (btnEl.textContent !== questions[currentQuestion].correctChoice) {
         timeRemaining -= 10;
         timer.textContent = "Seconds Remaining: " + timeRemaining;
         wrongAnswer.style.display = "block";
@@ -102,7 +100,7 @@ function choiceHandler(event) {
         quiz.style.display = "none";
         quiz.textContent = "";
     
-        choice.forEach(function (element, index) {
+        choice.forEach(function (element) {
             element.textContent = "";
             element.style.display = "none";
         });
@@ -114,13 +112,19 @@ function choiceHandler(event) {
         quiz.style.display = "none";
         quiz.textContent = "";
     
-        choice.forEach(function (element, index) {
+        choice.forEach(function (element) {
             element.textContent = "";
             element.style.display = "none";
         });
         
     }
     currentQuestion++;   
+
+    if (currentQuestion === questions.length) {
+        nextQuestion.textContent = "Get Score";
+        nextQuestion.removeEventListener("click", displayNextQuestion);
+        nextQuestion.addEventListener("click", endQuiz);
+    }
 }
 
 nextQuestion.addEventListener("click", displayNextQuestion);
@@ -128,10 +132,10 @@ nextQuestion.addEventListener("click", displayNextQuestion);
 function displayNextQuestion(){
 
     quiz.style.display = "block";
-    quiz.textContent = questions[1].title;
+    quiz.textContent = questions[currentQuestion].title;
 
     choice.forEach(function (element, index) {
-        element.textContent = questions[1].choices[index];
+        element.textContent = questions[currentQuestion].choices[index];
         element.style.display = "block";
     });
 
@@ -139,4 +143,27 @@ function displayNextQuestion(){
     rightAnswer.style.display = "none";
     nextQuestion.style.display = "none";
 
+}
+
+function endQuiz() {
+    wrongAnswer.style.display = "none";
+    rightAnswer.style.display = "none";
+    nextQuestion.style.display = "none";
+    highScores.style.display = "block";
+    clearInterval(interval);
+}
+var initialsEl = document.getElementById("initials");
+initialsEl.addEventListener("click", handleInitials);
+function handleInitials() {
+    console.log("handleInitials");
+    var initials = document.getElementById("player").value.trim();
+    console.log("initials = ", initials);
+    let storedScores = JSON.parse(window.localStorage.getItem("storedScores")) || [];
+    let currentScore = {
+        score: timeRemaining,
+        initials: initials
+    };
+    storedScores.push(currentScore);
+    localStorage.setItem("Stored Scores", JSON.stringify(storedScores));
+    window.location.href = "hs.html";
 }

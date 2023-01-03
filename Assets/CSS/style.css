@@ -69,3 +69,9 @@
         display: block;
         padding: 10px;
     }
+
+    #highScores {
+        display: none;
+        text-align: center;
+        margin: auto;
+    }
