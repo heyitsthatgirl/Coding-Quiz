@@ -49,11 +49,8 @@ var questions = [
 ];
 
 var currentQuestion = 0;
-
-// selects random question from questions object
-// var random = Math.floor(Math.random() * questions.length);
-// var questSelect = questions[random];
 var interval;
+
 startButton.addEventListener("click", startTimer);
 function startTimer() {
   startButton.style.display = "none";
@@ -148,54 +145,23 @@ function endQuiz() {
   clearInterval(interval);
 }
 
-// var storedScores = JSON.parse(localStorage.getItem("high scores: ")) ?? []; //this can't be right
-
 var initialsEl = document.getElementById("initials");
 initialsEl.addEventListener("click", saveScore);
+
 function saveScore(event) {
   event.preventDefault();
 
   var inputBox = document.getElementById("player");
   var initials = inputBox.value;
-  let currentScore = {
-    score: timeRemaining,
-    player: initials,
-  };
+  var currentScore = "player: " + initials + " score: " + timeRemaining;
 
-  if(localStorage.getItem('scores') == null) {
-    localStorage.setItem('scores', '[]');
+  if (localStorage.getItem("scores") == null) {
+    localStorage.setItem("scores", "[]");
   }
 
-  let oldScores = JSON.parse(localStorage.getItem('scores'));
+  let oldScores = JSON.parse(localStorage.getItem("scores"));
   oldScores.push(currentScore);
 
-  localStorage.setItem('scores', JSON.stringify(oldScores));
+  localStorage.setItem("scores", JSON.stringify(oldScores));
   window.location.href = "./hs.html";
-   
-
-  // if (inputBox && initials){
-
-  //     storedScores.push(currentScore);
-  //     localStorage.setItem("high scores: ", JSON.stringify(storedScores));
-  //     window.location.href = "./hs.html";
-  // }
 }
-
-// storedScores.push(currentScore);
-// localStorage.setItem("player: ", JSON.stringify(initials));
-// localStorage.setItem("score: ", JSON.stringify(timeRemaining));
-// localStorage.setItem("high scores: ", JSON.stringify(storedScores));
-
-//     var initials = document.getElementById("player").value.trim();
-//     console.log("player = ", initials);
-
-//     let storedScores =
-//       JSON.parse(window.localStorage.getItem("storedScores")) || [];
-//     let currentScore = {
-//       score: timeRemaining,
-//       player: initials,
-//     };
-//     storedScores.push(currentScore);
-//     localStorage.setItem("Stored Scores", JSON.stringify(storedScores));
-//     window.location.href = "./hs.html";
-//   }
