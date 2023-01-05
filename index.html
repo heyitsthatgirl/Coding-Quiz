@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./Assets/CSS/style.css" />
     <title>Coding Quiz</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="float-left"><a href="#highScores">View High Scores</a></div>
-        <div class="float-right" id="timer"></div>
+      <div class="float-left"><a href="./hs.html">View High Scores</a></div>
+      <div class="float-right" id="timer"></div>
     </header>
 
     <div class="center">
-        <h1>Code Quiz Challenge</h1>
+      <h1>Code Quiz Challenge</h1>
     </div>
     <div class="center">
-        <button id="start-button">Start The Quiz</button>
+      <button id="start-button">Start The Quiz</button>
     </div>
 
     <div class="card" id="quiz"></div>
     <div>
-    <button onclick="choiceHandler(event)" class="choice"></button>
-    <button onclick="choiceHandler(event)" class="choice"></button>
-    <button onclick="choiceHandler(event)" class="choice"></button>
-    <button onclick="choiceHandler(event)" class="choice"></button>
+      <button onclick="choiceHandler(event)" class="choice"></button>
+      <button onclick="choiceHandler(event)" class="choice"></button>
+      <button onclick="choiceHandler(event)" class="choice"></button>
+      <button onclick="choiceHandler(event)" class="choice"></button>
     </div>
 
     <div id="wrong">Wrong Answer!</div>
     <div id="right">Right Answer!</div>
 
     <div>
-        <button id="next">Next Question</button>
+      <button id="next">Next Question</button>
     </div>
 
     <div id="highScores">
-        <h2>High Scores</h2>
-        <form>
-            <label for="player">Player Initials:</label><br>
-            <input type="text" id="player" name="player"><br>
-            <button id="initials" type="submit" value="Submit">Submit</button>
-          </form>
+        <h2 id="yourScore"></h2>
+        
+      <label for="player"></label><br />
+      <input type="text" id="player" name="player" placeholder="enter player initials"/><br />
+      <button id="initials" type="submit" value="Submit">Save Score</button>
+     
     </div>
 
     <script src="./Assets/JS/script.js"></script>
-</body>
-
+  </body>
 </html>
