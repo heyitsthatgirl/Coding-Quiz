@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+    font-family:'Courier New', Courier, monospace
     }
     
     .header {
@@ -11,6 +12,10 @@
         display: inline;
         float: left;
         padding: 25px;
+    }
+
+    #viewHS {
+        text-decoration: none;
     }
     
     .float-right {
@@ -75,4 +80,18 @@
         text-align: center;
         margin: auto;
     }
+
+/* High Scores stying below */
+
+.wrapper {
+    border-style: dashed;
+}
+
+#noScore {
+    text-align: center;
+}
+
+#populateScores {
+    list-style: none;
+}
 
