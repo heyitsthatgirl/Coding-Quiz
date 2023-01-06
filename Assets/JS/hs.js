@@ -6,6 +6,7 @@ if (scores == null) {
     let noScore = document.getElementById("noScore");
     noScore.textContent = "No High Scores Yet!";
 }
+
 // if there are saved scores they will appear as list items
 else {
     for (let i=0; i < scores.length; i++) {

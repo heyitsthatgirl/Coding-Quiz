@@ -1,7 +1,7 @@
 var startButton = document.getElementById("start-button");
 var timer = document.getElementById("timer");
 timer.textContent = "Seconds Remaining: 120";
-var timeRemaining = 120;
+var timeRemaining ;
 var highScores = document.getElementById("highScores");
 var quiz = document.getElementById("quiz");
 var choice = document.querySelectorAll(".choice");
@@ -65,12 +65,11 @@ function startTimer() {
   interval = setInterval(function () {
     timeRemaining--;
     timer.textContent = "Seconds Remaining: " + timeRemaining;
-
+// if time runs out the player will be notified, quiz will disappear, and asked if they want to try again
     if (timeRemaining <= 0) {
       clearInterval(interval);
       timer.textContent = "Time's Up!";
       startButton.style.display = "";
-    //   highScores.style.display = "block";
       quiz.style.display = "none";
       choice.forEach(function (element) {
         element.textContent = "";
@@ -87,10 +86,12 @@ function startTimer() {
   displayQuestion();
 }
 
+// refreshes page if player chooses try again
 function refresh(){
     window.location.reload();
 }
 
+// displays the first question and answer choices from the questions object
 function displayQuestion() {
   quiz.style.display = "block";
   quiz.textContent = questions[currentQuestion].title;

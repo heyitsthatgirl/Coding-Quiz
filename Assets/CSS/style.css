@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    /* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
     font-family:'Courier New', Courier, monospace
     }
     
@@ -12,16 +11,23 @@
         display: inline;
         float: left;
         padding: 25px;
-    }
-
-    #viewHS {
-        text-decoration: none;
+        font-size: 18px;
     }
     
     .float-right {
         display: inline;
         float: right;
         padding: 25px;
+        font-size: 18px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    #heading {
+        font-size: 36px;
     }
     
     .center {
@@ -32,7 +38,7 @@
     }
 
     #start-button {
-       font-size: larger;
+       font-size: 18px;
        padding: 10px;
        display: '';
     }
@@ -44,6 +50,8 @@
 
     #quiz {
         display: none;
+        font-size: 24px;
+        font-weight: bold;
     }
 
     .choice {
@@ -52,6 +60,7 @@
         margin-top: 20px;
         padding: 10px;
         width: 200px;
+        font-size: 18px;
     }
 
     #wrong {
@@ -59,6 +68,8 @@
         text-align: center;
         justify-content: center;
         margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
     }
 
     #right {
@@ -66,6 +77,8 @@
         text-align: center;
         justify-content: center;
         margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
     }
 
     #next {
@@ -73,6 +86,7 @@
         margin-top: 20px;
         display: block;
         padding: 10px;
+        font-size: 18px;
     }
 
     #highScores {
@@ -81,17 +95,58 @@
         margin: auto;
     }
 
+    #yourScore {
+        font-size: 36px;
+    }
+
+    #player {
+        width: 350px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    #initials {
+        margin: 25px;
+        padding: 10px;
+        font-size: 18px;
+    }
+
 /* High Scores stying below */
 
 .wrapper {
-    border-style: dashed;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
 }
 
 #noScore {
     text-align: center;
+    font-size: 36px;
 }
 
 #populateScores {
     list-style: none;
+    margin-left: -40px;
+}
+
+#populateScores li {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#back {
+    margin: 15px;
+    padding: 10px;
+    width: 210px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#clearScores {
+    margin: 15px;
+    padding: 10px;
+    width: 210px;
+    font-size: 18px;
+    font-weight: bold;
 }
 
