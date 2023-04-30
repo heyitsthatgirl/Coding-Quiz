@@ -10,7 +10,7 @@ If time runs out before the quiz is completed, the user will be presented with t
 
 Once the user has answered all of the questions, they will be presented with their score, and can save their initials. The user will then be directed to the High Scores page, where their initials and score will be displayed along with previously existing scores. From there the user can choose to return to the homepage, or clear all existing scores.<br/>
 
-Deployed site: https://hopemansfield.github.io/Coding-Quiz/
+Deployed site:https://heyitsthatgirl.github.io/Coding-Quiz/
 <br/>
 
 ![coding-quiz-screenshot-1](https://user-images.githubusercontent.com/116748007/211106405-3d7c888e-1a28-4ce3-b879-9c25c83658ef.png)
